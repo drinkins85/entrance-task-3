@@ -6,7 +6,7 @@
 
 const CACHE_VERSION = '1.0.0-broken';
 
-importScripts('../vendor/kv-keeper.js-1.0.4/kv-keeper.js');
+importScripts('./vendor/kv-keeper.js-1.0.4/kv-keeper.js');
 
 
 self.addEventListener('install', event => {
@@ -127,7 +127,8 @@ function deleteObsoleteCaches() {
 function needStoreForOffline(cacheKey) {
     return cacheKey.includes('vendor/') ||
         cacheKey.includes('assets/') ||
-        cacheKey.endsWith('jquery.min.js');
+        cacheKey.endsWith('jquery.min.js')||
+        cacheKey.endsWith('gifs.html');
 }
 
 // Скачать и добавить в кеш
